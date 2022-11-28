@@ -4,5 +4,6 @@ module.exports = {
     "./docs/.vitepress/**/*.vue",
     "./docs/.vitepress/**/*.ts",
     "./docs/**/*.md",
+    "./components/**/*.vue",
   ],
 }
