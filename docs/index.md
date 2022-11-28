@@ -3,9 +3,9 @@ title: "Home"
 ---
 
 <script setup>
-import Skills from '../components/Skills.vue'
+import SkillItems from '../components/skill-items.vue'
 </script>
 
 Welcome
 
-<Skills />
+<SkillItems />
