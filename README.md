@@ -6,6 +6,15 @@ The motivation for this monorepo is to standardize and streamline **JavaScript/T
 
 [jeffholst/resume](https://github.com/jeffholst/resume)
 
+## 💻 Commands
+
+| Command         | Action                    |
+| :-------------- | :------------------------ |
+| `npm install`   | Installs all dependencies |
+| `npm run dev`   | Run dev server            |
+| `npm run build` | Rebuilds project          |
+| `npm run lint`  | Run eslint for project    |
+
 ## CODE FORMATTING
 
 [Prettier](https://prettier.io/) settings:
@@ -35,37 +44,19 @@ npm init @eslint/config
 - automate repetitive steps
 - custom build tasks
 
-### [VS CODE](https://code.visualstudio.com/)
+### [VitePress](https://vitepress.vuejs.org/)
 
-- cross-platform and lightweight
-- extremely fast compared to Visual Studio
-- extensive plugins for front-end development
-
-### [Vite](https://vitejs.dev/)
-
-- build with native ES modules
-- dev server with Hot Module Replacement
-- automate rollup (tranpiling and minification)
+- [Vite](https://vitejs.dev/) + [Vue.js](https://vuejs.org/) powered static site generator
+- server side generated pages built from Markdown
 
 ## 📁 Project Structure
 
 ```txt
 /
-├── apps/
-│   └── standalone applications go here
+├── components/
+│   └── Vue components go here
 └── packages/
     └── shared libraries and packages go here
 ```
-
-## 💻 Commands
-
-The following monorepo wide commands can be run from /root
-
-| Command         | Action                    |
-| :-------------- | :------------------------ |
-| `npm install`   | Installs all dependencies |
-| `npm run dev`   | Run dev server            |
-| `npm run build` | Rebuilds project          |
-| `npm run lint`  | Run eslint for project    |
 
 ## 👀 Tips

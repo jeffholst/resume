@@ -1,6 +1,9 @@
 <template>
   <div class="grid grid-cols-4 gap-4">
     <div class="skill" v-for="skill in skills" :key="skill.id">
+      <v-tooltip activator="parent" location="start">{{
+        skill.name
+      }}</v-tooltip>
       <svg
         height="75"
         width="75"
