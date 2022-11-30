@@ -1,6 +1,14 @@
 # Welcome
 
-The motivation for this monorepo is to standardize and streamline **JavaScript/TypeScript** development in a highly opinionated manner.
+Hello. My name is Jeff Holst. I am a Front End Engineer based in Austin, Texas.
+My passion is developing beautiful and elegant web solutions that make peoples
+lives more fun and enjoyable.
+
+This site is dedicated to showcasing some my work and skills. If you'd like to
+use this project as a template to display your own work feel free to clone it
+from GitHub and customize it to your liking.
+
+Thanks for stopping by and please do not hesitate to reach out if you have any questions.
 
 ## 📄 GitHub Repo
 
@@ -38,25 +46,28 @@ npm init @eslint/config
 
 ## 🔰 TECH STACK
 
-### [Gulp](https://gulpjs.com/)
-
-- deploy packages to production
-- automate repetitive steps
-- custom build tasks
-
 ### [VitePress](https://vitepress.vuejs.org/)
 
 - [Vite](https://vitejs.dev/) + [Vue.js](https://vuejs.org/) powered static site generator
-- server side generated pages built from Markdown
+- server side generated pages built with markdown and Vue
+
+### [Tailwind CSS](https://tailwindcss.com/)
+
+- utility-first CSS framework
 
 ## 📁 Project Structure
 
 ```txt
-/
-├── components/
-│   └── Vue components go here
-└── packages/
-    └── shared libraries and packages go here
+├── components/ (Vue components)
+├── docs/
+│   └── .vitepress/
+│        └── dist/ (build files)
+│        └── theme/
+│        └── config.js (main VitePress config file)
+└── resume.json (resume structure used to drive site)
 ```
 
-## 👀 Tips
+## 👀 References
+
+- [Devicon](https://devicon.dev/)
+- [JSON Resume](https://jsonresume.org/)
