@@ -2,8 +2,6 @@
 title: "Resume"
 ---
 
-# Resume
-
 ## Introduction
 
 ## Skills
