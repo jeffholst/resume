@@ -2,8 +2,6 @@
   <div class="grid grid-cols-4 gap-4">
     <div class="skill" v-for="skill in resume.skills" :key="skill.id">
       <svg
-        height="75"
-        width="75"
         viewBox="0 0 128 128"
         class="fill-color"
         v-html="skill.display"

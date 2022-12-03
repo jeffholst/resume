@@ -1680,7 +1680,7 @@
     "lodash" "^4.17.21"
     "semver" "^7.3.6"
 
-"vue@^3.0.0-0 || ^2.6.0", "vue@^3.2.0", "vue@^3.2.25", "vue@^3.2.41", "vue@3", "vue@3.2.45":
+"vue@^3.0.0-0 || ^2.6.0", "vue@^3.2.25", "vue@^3.2.41", "vue@3", "vue@3.2.45":
   "integrity" "sha512-9Nx/Mg2b2xWlXykmCwiTUCWHbWIj53bnkizBxKai1g61f2Xit700A1ljowpTIM11e3uipOeiPcSqnmBg6gyiaA=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-3.2.45.tgz"
   "version" "3.2.45"
@@ -1690,11 +1690,6 @@
     "@vue/runtime-dom" "3.2.45"
     "@vue/server-renderer" "3.2.45"
     "@vue/shared" "3.2.45"
-
-"vuetify@^3.0.2":
-  "integrity" "sha512-d+lb8DHUrrn9GnKaZW1dEApjIEamUcZn1HxomiQ0+y8t+jKjktpruo16AvAjpEHhAcCeWZ5RuK/S9HdT6z68Uw=="
-  "resolved" "https://registry.npmjs.org/vuetify/-/vuetify-3.0.2.tgz"
-  "version" "3.0.2"
 
 "which@^2.0.1":
   "integrity" "sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA=="

@@ -1,18 +1,22 @@
-# Welcome
+# Howdy! 🤠
 
-Hello. My name is Jeff Holst. I am a Front End Engineer based in Austin, Texas.
-My passion is developing beautiful and elegant web solutions that make peoples
+My name is Jeff Holst. I am a Front End Engineer based in Austin, Texas.
+My passion is developing ✨ elegant web solutions that make peoples
 lives more fun and enjoyable.
 
 This site is dedicated to showcasing some my work and skills. If you'd like to
 use this project as a template to display your own work feel free to clone it
 from GitHub and customize it to your liking.
 
-Thanks for stopping by and please do not hesitate to reach out if you have any questions.
+Thanks for stopping by and please do not hesitate to reach out if you have any questions. 👋
 
 ## 📄 GitHub Repo
 
 [jeffholst/resume](https://github.com/jeffholst/resume)
+
+## AWS Amplify
+
+[https://main.d1gvi7mcov4hu6.amplifyapp.com/](https://main.d1gvi7mcov4hu6.amplifyapp.com/)
 
 ## 💻 Commands
 
@@ -67,7 +71,12 @@ npm init @eslint/config
 └── resume.json (resume structure used to drive site)
 ```
 
-## 👀 References
+## 📎 References
 
 - [Devicon](https://devicon.dev/)
 - [JSON Resume](https://jsonresume.org/)
+
+## 💡🤔 Ideas
+
+- [vue-typer](https://cngu.github.io/vue-typer/)
+- [Swiper Vue](https://swiperjs.com/vue) [demo](https://swiperjs.com/demos)
