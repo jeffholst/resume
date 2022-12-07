@@ -19,7 +19,8 @@
     "vitepress": "^1.0.0-alpha.29"
   },
   "dependencies": {
-    "vitepress-plugin-simple-search": "^1.3.3"
+    "vitepress-plugin-simple-search": "^1.3.3",
+    "vue-writer": "^1.2.0"
   },
   "postcss": {
     "plugins": {

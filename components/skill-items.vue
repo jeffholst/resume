@@ -1,6 +1,7 @@
 <template>
   <div class="grid grid-cols-4 gap-4">
     <div class="skill" v-for="skill in resume.skills" :key="skill.id">
+      <div v-show="isActive" class="text-center">{{ skill.name }}</div>
       <svg
         viewBox="0 0 128 128"
         class="fill-color"
@@ -8,11 +9,13 @@
       ></svg>
     </div>
   </div>
-  <div class="mt-5">Icons from: <a href="https://devicon.dev/">Devicon</a></div>
 </template>
 
 <script setup>
+import { ref } from "vue"
 import resume from "../resume.json"
+
+const isActive = ref(false)
 </script>
 
 <style scoped>

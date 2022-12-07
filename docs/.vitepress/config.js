@@ -6,22 +6,25 @@ export default {
       pattern: "https://github.com/jeffholst/resume/edit/main/docs/:path",
       text: "Edit this page on GitHub",
     },
-    nav: [{ text: "Contact", link: "/About/Contact" }],
+    nav: [
+      { text: "Contact", link: "Contact" },
+      { text: "Résumé", link: "Resume" },
+    ],
     sidebar: [
       {
         text: "About",
-        link: "/",
         collapsible: true,
         items: [
-          { text: "Resume", link: "/About/Resume" },
-          { text: "Contact", link: "/About/Contact" },
+          { text: "Skills", link: "/About/Skills" },
+          { text: "Experience", link: "/About/Experience" },
+          { text: "Education", link: "/About/Education" },
+          { text: "Interests", link: "/About/Interests" },
         ],
       },
       {
         text: "Portfolio",
-        link: "/Portfolio",
-        collapsible: false,
-        items: [],
+        collapsible: true,
+        items: [{ text: "Projects", link: "/Portfolio/Projects" }],
       },
     ],
   },
