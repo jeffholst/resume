@@ -50,11 +50,11 @@ title: "Home"
   position: relative;
 }
 .card0 {
-  background: url("./headshot.jpg") center center no-repeat;
+  background: url("headshot.jpg") center center no-repeat;
   background-size: 220px;
 }
 .card0:hover {
-  background: url("./headshot.jpg") left center no-repeat;
+  background: url("headshot.jpg") left center no-repeat;
   background-size: 400px;
 }
 .card0:hover .fa {
