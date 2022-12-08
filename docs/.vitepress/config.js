@@ -6,7 +6,7 @@ export default {
       pattern: "https://github.com/jeffholst/resume/edit/main/docs/:path",
       text: "Edit this page on GitHub",
     },
-    logo: "public/JH.svg",
+    logo: "/JH.svg",
     nav: [
       { text: "Contact", link: "Contact" },
       { text: "Résumé", link: "Resume" },
