@@ -1,4 +1,4 @@
-# Howdy! 🤠
+# Howdy Y'all! 🤠
 
 My name is Jeff Holst. I am a Front End Engineer based in Austin, Texas.
 My passion is developing ✨ elegant web solutions that make peoples
