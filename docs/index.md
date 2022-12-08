@@ -6,12 +6,9 @@ title: "Home"
     import VueWriter from 'vue-writer'
 
     const welcomeAry = [
-        'Howdy from Austin, Texas',
         'My name is Jeff Holst',
-        'Nice to meet you (virtually)',
         'I\'m a full-stack developer',
-        'I love to build amazing things',
-        'Enjoy your stay',
+        'I love to build awesome stuff',
     ]
 </script>
 
@@ -20,15 +17,16 @@ title: "Home"
     <div class="border">
     </div>
   </div>
-  <div class='mt-3 text-2xl font-bold'>
+  <div class='mt-3 text-center text-2xl font-bold'>
+     <p>Howdy from Austin, Texas</p>
      <VueWriter :array="welcomeAry" :eraseSpeed="25" />
   </div>
 </div>
 
 <style>
 .border {
-  height: 269px;
-  width: 190px;
+  height: 279px;
+  width: 200px;
   background: transparent;
   border-radius: 10px;
   transition: border 1s;
@@ -52,11 +50,11 @@ title: "Home"
   position: relative;
 }
 .card0 {
-  background: url("./Jeff01.jpg") center center no-repeat;
+  background: url("./headshot.jpg") center center no-repeat;
   background-size: 220px;
 }
 .card0:hover {
-  background: url("./Jeff02.jpg") left center no-repeat;
+  background: url("./headshot.jpg") left center no-repeat;
   background-size: 400px;
 }
 .card0:hover .fa {
