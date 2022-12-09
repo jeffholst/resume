@@ -19,6 +19,7 @@
     "vitepress": "^1.0.0-alpha.29"
   },
   "dependencies": {
+    "@headlessui/vue": "^1.7.5",
     "vitepress-plugin-simple-search": "^1.3.3",
     "vue-writer": "^1.2.0"
   },
