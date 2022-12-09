@@ -57,7 +57,4 @@ title: "Home"
   background: url("/headshot.jpg") left center no-repeat;
   background-size: 400px;
 }
-.card0:hover .fa {
-  opacity: 1;
-}
 </style>

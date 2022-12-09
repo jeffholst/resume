@@ -1,8 +1,9 @@
 <template>
-  <div class="grid grid-cols-4 gap-4">
+  <div class="grid grid-cols-6 md:grid-cols-8 gap-4">
     <div class="skill" v-for="skill in resume.skills" :key="skill.id">
-      <div v-show="isActive" class="text-center">{{ skill.name }}</div>
+      <div v-show="showNames" class="text-center">{{ skill.name }}</div>
       <svg
+        :id="getSkillId(skill.id)"
         viewBox="0 0 128 128"
         class="fill-color"
         v-html="skill.display"
@@ -12,10 +13,36 @@
 </template>
 
 <script setup>
-import { ref } from "vue"
+import { ref, onMounted } from "vue"
 import resume from "../resume.json"
 
-const isActive = ref(false)
+const showNames = ref(false)
+let intervalId
+onMounted(() => {
+  intervalId = setInterval(function () {
+    const randomSkillId = getRandomSkillId()
+    const skillElement = document.getElementById(randomSkillId)
+    if (skillElement.classList.contains("wobble-effect")) {
+      skillElement.classList.remove("wobble-effect")
+    }
+    skillElement.classList.add("wobble-effect")
+  }, 500)
+
+  //clearInterval(intervalId);
+})
+
+const getRandomSkillId = () => {
+  const randomSkillIndex = pickRandomNumber(resume.skills.length)
+  return getSkillId(resume.skills[randomSkillIndex].id)
+}
+
+const getSkillId = (id) => {
+  return `skill_${id}`
+}
+
+const pickRandomNumber = (length) => {
+  return Math.floor(Math.random() * length)
+}
 </script>
 
 <style scoped>
@@ -54,7 +81,7 @@ const isActive = ref(false)
   }
 }
 
-.fill-color:hover {
+.wobble-effect {
   -webkit-animation-name: wobble;
   animation-name: wobble;
   -webkit-animation-duration: 1s;
@@ -65,7 +92,7 @@ const isActive = ref(false)
   animation-iteration-count: 1;
 }
 
-:root.dark .fill-color:hover {
+:root.dark .wobble-effect {
   -webkit-animation-name: wobble;
   animation-name: wobble;
   -webkit-animation-duration: 1s;
