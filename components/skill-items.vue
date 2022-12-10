@@ -3,6 +3,8 @@
     :initialState="props.animationOn"
     textOn="Animation On"
     textOff="Animation Off"
+    switchOnColor="#60be86"
+    switchOffColor="#cccccc"
     @switchOn="startAnimation"
     @switchOff="stopAnimation"
   />
@@ -62,7 +64,7 @@ const startAnimation = () => {
   intervalId = setInterval(function () {
     const random = pickRandomNumber(resume.skills.length)
     animate(resume.skills[random].id)
-  }, 500)
+  }, 400)
 }
 
 const stopAnimation = () => {

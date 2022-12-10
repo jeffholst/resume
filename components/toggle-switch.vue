@@ -2,17 +2,20 @@
   <SwitchGroup as="div" class="flex items-center">
     <Switch
       v-model="enabled"
-      :class="[
-        enabled ? 'bg-indigo-600' : 'bg-gray-200',
-        'relative inline-flex h-6 w-12 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2',
+      :style="[
+        enabled
+          ? `background-color: ${props.switchOnColor};`
+          : `background-color: ${props.switchOffColor};`,
+        'height: 25px;',
       ]"
+      class="relative inline-flex w-12 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2"
     >
       <span
         :class="[
           enabled ? 'translate-x-5' : 'translate-x-0',
           'pointer-events-none relative inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out',
         ]"
-        style="margin-top: 1px; margin-left: 3px"
+        style="margin-top: 2px; margin-left: 3px"
       >
         <span
           :class="[
@@ -23,7 +26,12 @@
           ]"
           aria-hidden="true"
         >
-          <svg class="h-3 w-3 text-gray-400" fill="none" viewBox="0 0 12 12">
+          <svg
+            class="h-3 w-3"
+            fill="none"
+            viewBox="0 0 12 12"
+            :style="[`color: ${props.switchOffColor};`]"
+          >
             <path
               d="M4 8l2-2m0 0l2-2M6 6L4 4m2 2l2 2"
               stroke="currentColor"
@@ -43,7 +51,8 @@
           aria-hidden="true"
         >
           <svg
-            class="h-3 w-3 text-indigo-600"
+            class="h-3 w-3"
+            :style="[`color: ${props.switchOnColor};`]"
             fill="currentColor"
             viewBox="0 0 12 12"
           >
@@ -66,6 +75,8 @@ import { Switch, SwitchGroup, SwitchLabel } from "@headlessui/vue"
 
 const props = defineProps({
   initialState: Boolean,
+  switchOnColor: String,
+  switchOffColor: String,
   textOn: String,
   textOff: String,
 })
