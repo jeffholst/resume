@@ -1,103 +1,76 @@
 <template>
-  <SwitchGroup as="div" class="flex items-center">
-    <Switch
-      v-model="enabled"
-      :style="[
-        enabled
-          ? `background-color: ${props.switchOnColor};`
-          : `background-color: ${props.switchOffColor};`,
-        'height: 25px;',
-      ]"
-      class="relative inline-flex w-12 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2"
-    >
-      <span
-        :class="[
-          enabled ? 'translate-x-5' : 'translate-x-0',
-          'pointer-events-none relative inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out',
-        ]"
-        style="margin-top: 2px; margin-left: 3px"
-      >
-        <span
-          :class="[
-            enabled
-              ? 'opacity-0 ease-out duration-100'
-              : 'opacity-100 ease-in duration-200',
-            'absolute inset-0 flex h-full w-full items-center justify-center transition-opacity',
-          ]"
-          aria-hidden="true"
-        >
-          <svg
-            class="h-3 w-3"
-            fill="none"
-            viewBox="0 0 12 12"
-            :style="[`color: ${props.switchOffColor};`]"
-          >
-            <path
-              d="M4 8l2-2m0 0l2-2M6 6L4 4m2 2l2 2"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </span>
-        <span
-          :class="[
-            enabled
-              ? 'opacity-100 ease-in duration-200'
-              : 'opacity-0 ease-out duration-100',
-            'absolute inset-0 flex h-full w-full items-center justify-center transition-opacity',
-          ]"
-          aria-hidden="true"
-        >
-          <svg
-            class="h-3 w-3"
-            :style="[`color: ${props.switchOnColor};`]"
-            fill="currentColor"
-            viewBox="0 0 12 12"
-          >
-            <path
-              d="M3.707 5.293a1 1 0 00-1.414 1.414l1.414-1.414zM5 8l-.707.707a1 1 0 001.414 0L5 8zm4.707-3.293a1 1 0 00-1.414-1.414l1.414 1.414zm-7.414 2l2 2 1.414-1.414-2-2-1.414 1.414zm3.414 2l4-4-1.414-1.414-4 4 1.414 1.414z"
-            />
-          </svg>
-        </span>
-      </span>
-    </Switch>
-    <SwitchLabel as="span" class="ml-3">
-      <span class="text-sm font-medium">{{ switchLabel }}</span>
-    </SwitchLabel>
-  </SwitchGroup>
+  <div class="flex flex-row">
+    <div>
+      <button @click="toggle" class="ToggleSwitch" type="button" role="switch">
+        <div :class="switchClasses">
+          <slot v-if="switchOn" name="IconOn" />
+          <slot v-else name="IconOff" />
+        </div>
+      </button>
+    </div>
+    <div class="pl-2">
+      <slot v-if="switchOn" name="LabelOn" />
+      <slot v-else name="LabelOff" />
+    </div>
+  </div>
 </template>
 
 <script setup>
-import { ref, watch, onMounted, computed } from "vue"
-import { Switch, SwitchGroup, SwitchLabel } from "@headlessui/vue"
+import { computed, onMounted, ref } from "vue"
 
 const props = defineProps({
-  initialState: Boolean,
-  switchOnColor: String,
-  switchOffColor: String,
-  textOn: String,
-  textOff: String,
+  switchOn: Boolean,
 })
 
-const emit = defineEmits(["switchOn", "switchOff"])
+const emit = defineEmits(["callback"])
 
-const enabled = ref(false)
+const switchOn = ref(false)
 
 onMounted(() => {
-  enabled.value = props.initialState
+  switchOn.value = props.switchOn
 })
 
-const switchLabel = computed(() => {
-  return enabled.value ? props.textOn : props.textOff
+const switchClasses = computed(() => {
+  return `icon ${switchOn.value ? "right" : "left"}`
 })
 
-watch(enabled, (newValue) => {
-  if (newValue) {
-    emit("switchOn")
-  } else {
-    emit("switchOff")
-  }
-})
+const toggle = () => {
+  switchOn.value = !switchOn.value
+  emit("callback", switchOn.value)
+}
 </script>
+
+<style scoped>
+.ToggleSwitch {
+  border-radius: 11px;
+  width: 40px;
+  height: 22px;
+  border: 1px solid var(--vp-c-divider);
+  background-color: var(--vp-c-bg-mute);
+}
+
+.ToggleSwitch:hover {
+  border-color: var(--vp-c-gray);
+}
+
+.icon {
+  top: -2px;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background-color: var(--vp-c-white);
+  box-shadow: var(--vp-shadow-1);
+  transition: transform 0.25s;
+}
+
+.dark .icon {
+  background-color: var(--vp-c-black);
+}
+
+.left {
+}
+
+.right {
+  transform: translate(18px, 0px);
+}
+</style>

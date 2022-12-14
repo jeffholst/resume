@@ -1,13 +1,15 @@
 <template>
   <ToggleSwitch
-    :initialState="props.animationOn"
-    textOn="Animation On"
-    textOff="Animation Off"
-    switchOnColor="#60be86"
-    switchOffColor="#cccccc"
-    @switchOn="startAnimation"
-    @switchOff="stopAnimation"
-  />
+    :switchOn="animationOn"
+    @callback="animationToggle"
+    aria-label="toggle animation"
+    :aria-checked="checked"
+  >
+    <template v-slot:IconOff><IconOff /></template>
+    <template v-slot:IconOn><IconOn /></template>
+    <template v-slot:LabelOn>Animation On</template>
+    <template v-slot:LabelOff>Animation Off</template>
+  </ToggleSwitch>
   <div class="grid grid-cols-6 md:grid-cols-8 gap-4 pt-3">
     <div v-for="skill in resume.skills" :key="skill.id">
       <div v-show="showNames" class="text-center">{{ skill.name }}</div>
@@ -25,17 +27,22 @@
 <script setup>
 import { ref, onMounted } from "vue"
 import resume from "../resume.json"
-import ToggleSwitch from "../components/toggle-switch.vue"
+import ToggleSwitch from "./toggle-switch.vue"
+import IconOff from "./icons/IconOff.vue"
+import IconOn from "./icons/IconOn.vue"
 
 const props = defineProps({
   animationOn: Boolean,
 })
 
 let intervalId
-const animateSkills = ref(false)
+const animateSkills = ref(null)
 
 onMounted(() => {
   animateSkills.value = props.animationOn
+  if (animateSkills.value) {
+    startAnimation()
+  }
 })
 
 const showNames = ref(false)
@@ -48,6 +55,15 @@ const animate = (id) => {
     setTimeout(() => {
       skillElement.classList.remove("wobble-effect")
     }, "1000")
+  }
+}
+
+const animationToggle = (value) => {
+  animateSkills.value = value
+  if (animateSkills.value) {
+    startAnimation()
+  } else {
+    stopAnimation()
   }
 }
 
@@ -70,6 +86,10 @@ const startAnimation = () => {
 const stopAnimation = () => {
   animateSkills.value = false
   clearInterval(intervalId)
+}
+
+const toggle = () => {
+  console.log("toggle")
 }
 </script>
 
